@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FeiraAqui! - Lista</title>
+    <!-- Incluindo Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluindo Font Awesome para ícones -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- O CSS personalizado será carregado separadamente -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="phone-frame">
+        <!-- Header -->
+        <div class="bg-green-700 text-white p-4 flex justify-between items-center rounded-t-2xl">
+            <h1 class="text-xl font-bold">FeiraAqui!</h1>
+            <button id="searchButtonList" class="text-lg"><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button id="filterProdutoList" class="flex items-center space-x-2 text-gray-700 font-medium">
+                <i class="fas fa-apple-alt"></i>
+                <span>Produto</span>
+            </button>
+            <button id="filterPagamentoList" class="flex items-center space-x-2 text-gray-700 font-medium">
+                <i class="fas fa-credit-card"></i>
+                <span>Pagamento</span>
+            </button>
+            <button id="filterDeliveryList" class="flex items-center space-x-2 text-gray-700 font-medium">
+                <i class="fas fa-truck"></i>
+                <span>Delivery</span>
+            </button>
+        </div>
+
+        <!-- List of Fairs -->
+        <div class="flex-grow overflow-y-auto pb-4">
+            <!-- Fair Card 1 -->
+            <div class="fair-card">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-lg font-semibold text-gray-800">Feira Orgânica Central</h2>
+                    <span class="status-tag status-open">Aberta Agora!</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3">Produtos frescos, aceita cartão e PIX.</p>
+                <div class="flex space-x-3 text-gray-500 text-sm mb-3">
+                    <span class="flex items-center"><i class="fas fa-seedling mr-1"></i> Hortaliças</span>
+                    <span class="flex items-center"><i class="fas fa-apple-alt mr-1"></i> Frutas</span>
+                    <span class="flex items-center"><i class="fas fa-credit-card mr-1"></i> Cartão</span>
+                    <span class="flex items-center"><i class="fas fa-qrcode mr-1"></i> PIX</span>
+                    <span class="flex items-center"><i class="fas fa-truck mr-1"></i> Delivery</span>
+                </div>
+                <!-- Novas funcionalidades: Avaliação e Ações Rápidas -->
+                <div class="flex items-center text-yellow-500 text-sm mb-3">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                    <span class="text-gray-600 ml-2">(4.0)</span>
+                    <button onclick="viewReviews('Feira Orgânica Central')" class="ml-auto text-blue-600 hover:underline text-xs">Ver Avaliações</button>
+                </div>
+                <div class="flex justify-between items-center mt-2">
+                    <button onclick="addToShoppingList('Feira Orgânica Central')" class="bg-green-500 text-white px-3 py-1 rounded-md text-sm hover:bg-green-600 transition-colors flex-grow mr-2">
+                        <i class="fas fa-plus mr-1"></i> Lista
+                    </button>
+                    <button onclick="messageFair('Feira Orgânica Central')" class="bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600 transition-colors flex-grow">
+                        <i class="fas fa-comment-dots mr-1"></i> Falar
+                    </button>
+                    <button onclick="showFairDetails('Feira Orgânica Central')" class="bg-gray-200 text-gray-800 px-3 py-1 rounded-md text-sm hover:bg-gray-300 transition-colors ml-2">
+                        Detalhes
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fair Card 2 -->
+            <div class="fair-card">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-lg font-semibold text-gray-800">Feira do Bairro Sol</h2>
+                    <span class="status-tag status-closed">Fechada - Abre 8h amanhã</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3">Mel e geleias artesanais.</p>
+                <div class="flex space-x-3 text-gray-500 text-sm mb-3">
+                    <span class="flex items-center"><i class="fas fa-carrot mr-1"></i> Raízes</span>
+                    <span class="flex items-center"><i class="fas fa-hand-holding-usd mr-1"></i> Dinheiro</span>
+                </div>
+                <!-- Novas funcionalidades: Avaliação e Ações Rápidas -->
+                <div class="flex items-center text-yellow-500 text-sm mb-3">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                    <span class="text-gray-600 ml-2">(3.5)</span>
+                    <button onclick="viewReviews('Feira do Bairro Sol')" class="ml-auto text-blue-600 hover:underline text-xs">Ver Avaliações</button>
+                </div>
+                <div class="flex justify-between items-center mt-2">
+                    <button onclick="addToShoppingList('Feira do Bairro Sol')" class="bg-green-500 text-white px-3 py-1 rounded-md text-sm hover:bg-green-600 transition-colors flex-grow mr-2">
+                        <i class="fas fa-plus mr-1"></i> Lista
+                    </button>
+                    <button onclick="messageFair('Feira do Bairro Sol')" class="bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600 transition-colors flex-grow">
+                        <i class="fas fa-comment-dots mr-1"></i> Falar
+                    </button>
+                    <button onclick="showFairDetails('Feira do Bairro Sol')" class="bg-gray-200 text-gray-800 px-3 py-1 rounded-md text-sm hover:bg-gray-300 transition-colors ml-2">
+                        Detalhes
+                    </button>
+                </div>
+            </div>
+
+            <!-- Fair Card 3 -->
+            <div class="fair-card">
+                <div class="flex justify-between items-center mb-2">
+                    <h2 class="text-lg font-semibold text-gray-800">Feira da Praça Nova</h2>
+                    <span class="status-tag status-open">Aberta Agora!</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3">Variedade de grãos e cereais.</p>
+                <div class="flex space-x-3 text-gray-500 text-sm mb-3">
+                    <span class="flex items-center"><i class="fas fa-wheat-awn mr-1"></i> Grãos</span>
+                    <span class="flex items-center"><i class="fas fa-credit-card mr-1"></i> Cartão</span>
+                </div>
+                <!-- Novas funcionalidades: Avaliação e Ações Rápidas -->
+                <div class="flex items-center text-yellow-500 text-sm mb-3">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <span class="text-gray-600 ml-2">(5.0)</span>
+                    <button onclick="viewReviews('Feira da Praça Nova')" class="ml-auto text-blue-600 hover:underline text-xs">Ver Avaliações</button>
+                </div>
+                <div class="flex justify-between items-center mt-2">
+                    <button onclick="addToShoppingList('Feira da Praça Nova')" class="bg-green-500 text-white px-3 py-1 rounded-md text-sm hover:bg-green-600 transition-colors flex-grow mr-2">
+                        <i class="fas fa-plus mr-1"></i> Lista
+                    </button>
+                    <button onclick="messageFair('Feira da Praça Nova')" class="bg-blue-500 text-white px-3 py-1 rounded-md text-sm hover:bg-blue-600 transition-colors flex-grow">
+                        <i class="fas fa-comment-dots mr-1"></i> Falar
+                    </button>
+                    <button onclick="showFairDetails('Feira da Praça Nova')" class="bg-gray-200 text-gray-800 px-3 py-1 rounded-md text-sm hover:bg-gray-300 transition-colors ml-2">
+                        Detalhes
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation/Toggle -->
+        <div class="bg-green-700 p-3 flex justify-center items-center rounded-b-2xl">
+            <button id="toggleMapViewList" class="bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-900 transition-colors">
+                <i class="fas fa-map text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Filter Modal -->
+        <div id="filterModalList" class="modal-overlay">
+            <div class="modal-content">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Filtrar Feiras</h3>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Tipo de Produto:</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Frutas</label>
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Hortaliças</label>
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Grãos</label>
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Laticínios</label>
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Carnes</label>
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Outros</label>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Formas de Pagamento:</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Dinheiro</label>
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Cartão</label>
+                        <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> PIX</label>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">Delivery:</label>
+                    <label class="flex items-center"><input type="checkbox" class="form-checkbox text-green-600 rounded mr-2"> Sim, com delivery</label>
+                </div>
+
+                <div class="flex justify-end space-x-3">
+                    <button id="clearFiltersList" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 transition-colors">Limpar</button>
+                    <button id="applyFiltersList" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Aplicar Filtros</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Modal (Simple placeholder) -->
+        <div id="searchModalList" class="modal-overlay">
+            <div class="modal-content">
+                <h3 class="text-xl font-bold mb-4 text-gray-800">Buscar Feiras</h3>
+                <input type="text" placeholder="Digite o nome da feira ou produto..." class="w-full p-3 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500">
+                <div class="flex justify-end space-x-3">
+                    <button onclick="hideModal('searchModalList')" class="bg-gray-300 text-gray-800 px-4 py-2 rounded-lg hover:bg-gray-400 transition-colors">Cancelar</button>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- O JavaScript será carregado separadamente -->
+    <script src="script.js"></script>
+</body>
+</html>
