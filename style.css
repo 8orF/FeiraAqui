@@ -1,0 +1,86 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.phone-frame {
+    width: 375px; /* Largura padrão para celular */
+    height: 667px; /* Altura padrão para celular */
+    background-color: white;
+    border-radius: 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Necessário para o modal */
+}
+.filter-bar {
+    background-color: #f8f8f8;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fair-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    margin: 0.75rem 1rem;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer; /* Indica que o cartão é clicável */
+}
+.fair-card:hover {
+    transform: translateY(-3px);
+}
+.status-tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+.status-open {
+    background-color: #D4EDDA;
+    color: #155724;
+}
+.status-closed {
+    background-color: #F8D7DA;
+    color: #721C24;
+}
+/* Estilos do Modal */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+.modal-content {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease-in-out;
+}
+.modal-overlay.show .modal-content {
+    transform: translateY(0);
+}
